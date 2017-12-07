@@ -137,5 +137,13 @@
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "invoke-injectable": true
-  }
+  },
+  "no-duplicate-imports": true,
+  "ordered-imports": [
+    true,
+    {
+      "import-sources-order": "lowercase-last",
+      "named-imports-order": "lowercase-first"
+    }
+  ],
 }
