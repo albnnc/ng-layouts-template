@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       if (response.isLogged === false) {
         this.router.navigate(['/login']);
       }
-    })
+    });
   }
 
 }

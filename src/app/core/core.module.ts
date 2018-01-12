@@ -4,19 +4,19 @@ import { environment } from '../../environments/environment';
 import { AuthService } from './services/auth.service';
 import { AuthServiceStub } from './services/auth.service.stub';
 import { AuthGuard } from './guards/auth.guard';
-
-const stubbed: Array<any> = [{
-  provide: AuthService,
-  useClass: (environment.production ? AuthService : AuthServiceStub)
-}];
+import { debuglog } from 'util';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [],
-  providers: stubbed.concat([
-    AuthGuard
-  ])
+  providers: [
+    AuthGuard,
+    {
+      provide: AuthService,
+      useClass: environment.shouldStub['AuthService'] ? AuthService : AuthServiceStub
+    }
+  ]
 })
 export class CoreModule { }

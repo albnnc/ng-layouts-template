@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ng-layouts-template App', () => {
+describe('ng-layouts-template-new App', () => {
   let page: AppPage;
 
   beforeEach(() => {
